@@ -19,8 +19,8 @@ environment:
   PATH: /usr/sbin:/sbin:/usr/bin:/bin
 
 entrypoint:
-  command: /usr/bin/node
-cmd: --help
+  command: /usr/bin/java
+cmd: -help
 
 archs:
 - x86_64
