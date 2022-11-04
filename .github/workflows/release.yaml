@@ -50,11 +50,6 @@ jobs:
       run: |
           cat apko.images | sed 's/$/\n/g' | grep -v '^$' | jq -R -s -c 'split("\n")[:-1]' | jq .
           echo "image-refs=$(cat apko.images | sed 's/$/\n/g' | grep -v '^$' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
-    - name: Additional tags
-      uses: chainguard-images/actions/tag@main
-      with:
-        distroless_image: ghcr.io/${{ github.repository }}
-        docker_image: "php"
 
   scan:
     name: Scan apko images
